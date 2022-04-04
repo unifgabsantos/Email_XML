@@ -26,7 +26,7 @@ def main():
                         payload,filename = '',''
                         for part in data.get_payload():
                             if part.get_content_type() == 'application/xml':
-                                payload += part.get_payload()
+                                payload = part.get_payload()
                                 filename = part.get_filename()
                                 createXML(filename,payload)
 
